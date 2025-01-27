@@ -41,6 +41,10 @@ SELECT  *
 FROM `teachers`
 WHERE `phone` IS NULL
 
+
+
+/// Extra e Bonus
+
 9
 INSERT INTO `university_db`.`students` (`id`, `degree_id`, `name`, `surname`, `date_of_birth`, `fiscal_code`, `enrolment_date`, `registration_number`, `email`)
 VALUES ('5001', '1', 'Andrea', 'Ragazzoli', '2000-11-15', 'RGZNDR00S15D434V', '2025-01-24', '625032', 'andrearaga56@gmail.com');
@@ -50,9 +54,29 @@ UPDATE `university_db`.`teachers`
 SET `office_number` = '126'
 WHERE (`id` = '58');
 
-
-
 11
 UPDATE `university_db`.`students`
 SET `id` = '', `degree_id` = '', `name` = '', `surname` = '', `date_of_birth` = '', `fiscal_code` = '', `enrolment_date` = '', `registration_number` = '', `email` = ''
 WHERE (`id` = '5001');
+
+
+Bonus 1
+SELECT COUNT(YEAR(`enrolment_date`)), (YEAR(`enrolment_date`)) AS Anno
+FROM `students`
+GROUP BY Anno
+
+Bonus 2
+SELECT `office_address`, COUNT(`office_address`) AS `n`
+FROM `teachers`
+GROUP BY `office_address`
+ORDER BY `n` DESC
+
+Bonus 3
+SELECT `exam_id`, AVG(`vote`)
+FROM `exam_student`
+GROUP BY `exam_id`
+
+Bonus 4
+SELECT `department_id`, COUNT(`id`)
+FROM `degrees`
+GROUP BY `department_id`
