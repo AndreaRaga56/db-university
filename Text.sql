@@ -55,8 +55,8 @@ SET `office_number` = '126'
 WHERE (`id` = '58');
 
 11
-UPDATE `university_db`.`students`
-SET `id` = '', `degree_id` = '', `name` = '', `surname` = '', `date_of_birth` = '', `fiscal_code` = '', `enrolment_date` = '', `registration_number` = '', `email` = ''
+DELETE 
+FROM `students`
 WHERE (`id` = '5001');
 
 
